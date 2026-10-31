@@ -1,0 +1,27 @@
+# Bài 4: Tối ưu hóa Lưu trữ Dữ liệu Doanh nghiệp
+
+## 1. Vấn đề
+- Dữ liệu video 500GB nhưng laptop chỉ có SSD 256GB.
+- Nếu đồng bộ toàn bộ về máy, cần 500GB lớn hơn 256GB, dẫn đến SSD đầy và phần mềm đồng bộ bị treo.
+
+## 2. Giải pháp: Files On-Demand
+Thiết lập (OneDrive/Google Drive):
+1. Bật "Files On-Demand" (OneDrive: Settings > Sync and backup > Advanced settings; Google Drive: chọn chế độ "Stream files").
+2. Chọn thư mục video, chuột phải, chọn "Free up space" (online-only). File chỉ hiện biểu tượng đám mây, không chiếm dung lượng.
+3. Khi cần xem, nhấp mở file, hệ thống chỉ tải file đó về (biểu tượng chuyển sang tick xanh).
+4. Chỉ file quan trọng mới chọn "Always keep on this device".
+5. Bật Storage Sense để tự giải phóng file lâu không dùng.
+
+## 3. Xử lý Bẫy (mạng nhà tài trợ yếu hoặc đứt)
+- Giới hạn băng thông upload/download (Bandwidth limit) để không làm nghẽn mạng.
+- Đồng bộ ban đêm hoặc ngoài giờ cao điểm; chia video thành nhiều file nhỏ.
+- App hỗ trợ tiếp tục tải khi đứt (resume), nên không phải tải lại từ đầu; có mạng ổn định thì tự chạy tiếp.
+- Pause/Resume khi đang di chuyển, không đồng bộ qua 4G.
+
+## 4. Tính toán dung lượng (ví dụ)
+- Tổng Cloud: 500GB.
+- Mỗi file placeholder chỉ vài KB. Giả sử 250 file video (mỗi file ~2GB): 250 x ~4KB = ~1MB, gần như không đáng kể.
+- Giả sử cùng lúc mở/giữ offline 5 video: 5 x 2GB = 10GB.
+- Dung lượng chiếm trên laptop: khoảng 10GB (nhỏ hơn 256GB rất nhiều, còn trống hơn 240GB).
+- Nếu không dùng On-Demand: 500GB lớn hơn 256GB, tràn ổ.
+- Kết luận: tiết kiệm gần 98% dung lượng (từ 500GB xuống ~10GB), dữ liệu vẫn đầy đủ trên Cloud.
